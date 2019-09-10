@@ -1,7 +1,51 @@
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonCheckbox, IonLabel, IonNote, IonBadge, IonGrid, IonRow,IonCol, IonFooter } from '@ionic/react';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonIcon, IonLabel, IonRow,IonCol, IonGrid, IonButton, IonInput, IonSelect, IonSelectOption } from '@ionic/react';
 import React from 'react';
 import { add } from 'ionicons/icons';
 
+function InRow() {
+  return(
+    <IonGrid>
+      <IonRow>
+        <IonCol>
+          <IonInput placeholder="Play" type="number"></IonInput>
+        </IonCol>
+        <IonCol>
+          <IonInput placeholder="Down" type="number"></IonInput>
+        </IonCol>
+        <IonCol>
+          <IonInput placeholder="Distance" type="number"></IonInput>
+        </IonCol>
+        <IonCol>
+          <IonSelect placeholder="Formation">
+            <IonSelectOption value="value">WING</IonSelectOption>
+            <IonSelectOption value="value2">TRIO</IonSelectOption>
+          </IonSelect>
+        </IonCol>
+        <IonCol>
+        <IonSelect placeholder="Type">
+            <IonSelectOption value="value">PASS</IonSelectOption>
+            <IonSelectOption value="value2">RUN</IonSelectOption>
+          </IonSelect>
+        </IonCol>
+        <IonCol>
+          <IonInput placeholder="Play"></IonInput>
+        </IonCol>
+        <IonCol>
+          <IonSelect placeholder="Result">
+            <IonSelectOption value="value">INC</IonSelectOption>
+            <IonSelectOption value="value2">COMP</IonSelectOption>
+          </IonSelect>
+        </IonCol>
+        <IonCol size="1">
+          <IonInput placeholder="GN/LS" type="number"></IonInput>
+        </IonCol>
+        <IonCol size="1">
+          <IonButton><IonIcon icon={add} /></IonButton>
+        </IonCol>
+      </IonRow>
+    </IonGrid>
+  );
+};
 
 const Home: React.FunctionComponent = () => {
   return (
@@ -80,39 +124,8 @@ const Home: React.FunctionComponent = () => {
             </IonLabel>
           </IonItem>
         </IonList>
-
-        <IonFooter>
-          <IonItem>
-              <IonLabel>
-                <IonRow>
-                  <IonCol>
-                    <h1>Play #</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>Down</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>Distance</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>Formation</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>Type</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>Play</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>Result</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>GN/LS</h1>
-                  </IonCol>
-                </IonRow>
-              </IonLabel>
-          </IonItem>
-        </IonFooter>
+        
+        <InRow></InRow>
         </IonContent>
     </>
   );
