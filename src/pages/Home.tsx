@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonIcon, IonLabel, IonRow,IonCol, IonGrid, IonButton, IonInput, IonSelect, IonSelectOption } from '@ionic/react';
 import React from 'react';
 import { add } from 'ionicons/icons';
+import { removePropertiesDeep } from '@babel/types';
 
 function InRow() {
   return(
@@ -47,6 +48,41 @@ function InRow() {
   );
 };
 
+function PlayItem(props: any) {
+  return(
+    <IonItem>
+      <IonLabel>
+        <IonRow>
+            <IonCol>
+              <h1>{props.playNum}</h1>
+            </IonCol>
+            <IonCol>
+              <h1>{props.down}</h1>
+            </IonCol>
+            <IonCol>
+              <h1>{props.distance}</h1>
+            </IonCol>
+            <IonCol>
+              <h1>{props.formation}</h1>
+            </IonCol>
+            <IonCol>
+              <h1>{props.motion}</h1>
+            </IonCol>
+            <IonCol>
+              <h1>{props.play}</h1>
+            </IonCol>
+            <IonCol>
+              <h1>{props.result}</h1>
+            </IonCol>
+            <IonCol>
+              <h1>{props.gain}</h1>
+            </IonCol>
+          </IonRow>
+      </IonLabel>
+    </IonItem>
+  );
+}
+
 const Home: React.FunctionComponent = () => {
   return (
     <>
@@ -70,7 +106,7 @@ const Home: React.FunctionComponent = () => {
                     <h1>Distance</h1>
                   </IonCol>
                   <IonCol>
-                    <h1>Formation</h1>
+                    <h1>Motion</h1>
                   </IonCol>
                   <IonCol>
                     <h1>Type</h1>
@@ -93,36 +129,8 @@ const Home: React.FunctionComponent = () => {
           <IonItem>
 
           </IonItem>
-          <IonItem>
-            <IonLabel>
-              <IonRow>
-                  <IonCol>
-                    <h1>1</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>2</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>4</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>WING</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>PASS</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>EVEREST</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>COMP</h1>
-                  </IonCol>
-                  <IonCol>
-                    <h1>12</h1>
-                  </IonCol>
-                </IonRow>
-            </IonLabel>
-          </IonItem>
+          <PlayItem></PlayItem>
+          <PlayItem playNum="5"></PlayItem>
         </IonList>
         
         <InRow></InRow>
